@@ -1,9 +1,7 @@
-export default function SectionHeading({ eyebrow, title, description }) {
+export default function SectionHeading({ eyebrow }) {
   return (
     <div className="section-heading">
       <p className="eyebrow text-uppercase fw-semibold mb-2">{eyebrow}</p>
-      <h2>{title}</h2>
-      {description ? <p>{description}</p> : null}
     </div>
   );
 }

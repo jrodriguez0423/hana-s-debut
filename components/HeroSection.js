@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 
 export default function HeroSection() {
   const [showPortal, setShowPortal] = useState(true);
-  const [audioEnabled, setAudioEnabled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
@@ -13,54 +12,12 @@ export default function HeroSection() {
     return () => window.clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    if (!audioEnabled) return;
-
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    const ctx = new AudioContextClass();
-    const master = ctx.createGain();
-    master.gain.value = 0.025;
-    master.connect(ctx.destination);
-
-    const oscillators = [
-      { freq: 220, type: "sine", gain: 0.0018 },
-      { freq: 330, type: "triangle", gain: 0.0012 },
-      { freq: 440, type: "sine", gain: 0.0011 },
-    ].map(({ freq, type, gain }) => {
-      const osc = ctx.createOscillator();
-      const g = ctx.createGain();
-      osc.type = type;
-      osc.frequency.value = freq;
-      g.gain.value = gain;
-      osc.connect(g);
-      g.connect(master);
-      osc.start();
-      return { osc, g };
-    });
-
-    const id = window.setInterval(() => {
-      oscillators.forEach(({ osc }, index) => {
-        osc.frequency.setTargetAtTime(220 + index * 45 + Math.random() * 30, ctx.currentTime, 0.9);
-      });
-    }, 1400);
-
-    return () => {
-      window.clearInterval(id);
-      oscillators.forEach(({ osc, g }) => {
-        g.gain.exponentialRampToValueAtTime(0.00001, ctx.currentTime + 0.2);
-        osc.stop(ctx.currentTime + 0.22);
-        osc.disconnect();
-        g.disconnect();
-      });
-      ctx.close();
-    };
-  }, [audioEnabled]);
-
   const details = useMemo(
     () => [
       { label: "Date", value: "September 5, 2026" },
-      { label: "Time", value: "5:00 PM" },
+      { label: "Time", value: "5:00 PM - 11:00 PM" },
       { label: "Venue", value: "DoubleTree by Hilton Newark" },
+      { label: "Dress Code", value: "Formal jewel tones and gold" },
     ],
     []
   );
@@ -104,8 +61,8 @@ export default function HeroSection() {
               {[
                 ["Home", "#home"],
                 ["About Hana", "#about"],
-                ["Event Details", "#details"],
                 ["Program", "#program"],
+                ["Event Details", "#details"],
                 ["Gallery", "#gallery"],
                 ["RSVP", "#rsvp"],
               ].map(([label, href]) => (
@@ -129,26 +86,17 @@ export default function HeroSection() {
           <div className="moon-glow" />
           <div className="moon-phase phase-one" />
           <div className="moon-phase phase-two" />
-          <p className="hero-kicker">Hana&apos;s 18th Debut</p>
+          <p className="hero-kicker">Hana&apos;s 18th Debut & Hazel Rodriguez&apos;s 50th Birthday</p>
           <h1 className="hero-title">Hana Rodriguez</h1>
           <p className="hero-subtitle">An Evening Written in the Stars</p>
           <p className="hero-copy">
-            Please join us as we celebrate Hana&apos;s 18th Debut.
+            Please join us as we celebrate Hana&apos;s 18th Debut and Hazel Rodriguez&apos;s 50th Birthday.
           </p>
 
           <div className="d-flex justify-content-center gap-3 flex-wrap">
-            <a className="gold-btn" href="#about">
-              <i className="bi bi-stars" /> Open Invitation
+            <a className="gold-btn" href="#rsvp">
+              <i className="bi bi-stars" /> RSVP Here
             </a>
-            <button
-              className="icon-gold-btn"
-              type="button"
-              onClick={() => setAudioEnabled((prev) => !prev)}
-              aria-pressed={audioEnabled}
-              aria-label={audioEnabled ? "Mute background music" : "Play background music"}
-            >
-              <i className={`bi ${audioEnabled ? "bi-volume-up-fill" : "bi-volume-mute-fill"}`} />
-            </button>
           </div>
 
           {/* Hero event summary */}

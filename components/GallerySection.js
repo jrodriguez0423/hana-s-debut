@@ -20,7 +20,6 @@ export default function GallerySection() {
         <SectionHeading
           eyebrow="Gallery"
           title="Memories waiting to bloom"
-          description="The gallery is ready for treasured photos and moments to be added with ease."
         />
         <motion.div
           initial={{ opacity: 0, y: 24 }}

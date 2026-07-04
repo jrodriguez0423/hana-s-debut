@@ -20,7 +20,6 @@ export default function CountdownSection() {
         <SectionHeading
           eyebrow="Countdown"
           title="The night is drawing near"
-          description="We are counting down to an evening wrapped in starlight, gold, and enchantment."
         />
         <motion.div
           initial={{ opacity: 0, y: 24 }}

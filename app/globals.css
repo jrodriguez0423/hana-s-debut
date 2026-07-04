@@ -159,8 +159,7 @@ textarea {
 }
 
 /* Buttons and controls */
-.gold-btn,
-.icon-gold-btn {
+.gold-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -179,17 +178,8 @@ textarea {
   animation: gentlePulse 3s infinite ease-in-out;
 }
 
-.icon-gold-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  font-size: 1.05rem;
-}
-
 .gold-btn:hover,
-.gold-btn:focus-visible,
-.icon-gold-btn:hover,
-.icon-gold-btn:focus-visible {
+.gold-btn:focus-visible {
   color: var(--midnight);
   filter: saturate(1.08);
   transform: translateY(-2px) scale(1.015);

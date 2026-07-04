@@ -8,6 +8,7 @@ export default function RSVPSection() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    phone: "",
     guests: "0",
     guestNames: [],
     attendance: "Yes",
@@ -61,7 +62,6 @@ export default function RSVPSection() {
         <SectionHeading
           eyebrow="RSVP"
           title="Kindly let us know your presence"
-          description="Your response will be treasured as we prepare this magical evening together."
         />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -99,6 +99,20 @@ export default function RSVPSection() {
                       required
                     />
                     <label htmlFor="lastName">Your Last Name</label>
+                  </div>
+                  <div className="col-md-6 form-floating">
+                    <input
+                      className="form-control"
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Phone Number"
+                      autoComplete="tel"
+                      required
+                    />
+                    <label htmlFor="phone">Phone Number</label>
                   </div>
                   <div className="col-md-6 form-floating">
                     <input

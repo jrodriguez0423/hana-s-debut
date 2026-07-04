@@ -19,11 +19,11 @@ export default function Home() {
       <HeroSection />
       {/* Invitation story and event content */}
       <AboutSection />
-      <CountdownSection />
-      <DetailsSection />
       <ProgramSection />
+      <DetailsSection />
       <GallerySection />
       <RSVPSection />
+      <CountdownSection />
       <Footer />
     </main>
   );

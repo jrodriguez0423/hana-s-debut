@@ -10,9 +10,11 @@ const events = [
   { time: "7:00 PM", title: "Cotillion" },
   { time: "7:30 PM", title: "18 Roses" },
   { time: "7:50 PM", title: "18 Candles" },
-  { time: "8:15 PM", title: "Special Performances" },
-  { time: "8:50 PM", title: "Dancing" },
-  { time: "9:45 PM", title: "Photo Session" },
+  { time: "8:10 PM", title: "18 Benjamins" },
+  { time: "8:30 PM", title: "Special Performances" },
+  { time: "9:05 PM", title: "Dancing" },
+  { time: "10:00 PM", title: "Photo Session" },
+  { time: "11:00 PM", title: "Closing" },
 ];
 
 export default function ProgramSection() {
@@ -23,7 +25,6 @@ export default function ProgramSection() {
         <SectionHeading
           eyebrow="Program"
           title="A romantic evening, thoughtfully paced"
-          description="Each moment is designed to feel like a scene from a fairytale under the stars."
         />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
