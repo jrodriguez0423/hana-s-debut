@@ -2,6 +2,7 @@
 
 import BackgroundEffects from "../components/BackgroundEffects";
 import HeroSection from "../components/HeroSection";
+import InvitationSection from "../components/InvitationSection";
 import AboutSection from "../components/AboutSection";
 import CountdownSection from "../components/CountdownSection";
 import DetailsSection from "../components/DetailsSection";
@@ -17,6 +18,7 @@ export default function Home() {
       <BackgroundEffects />
       {/* Full-screen invitation opening */}
       <HeroSection />
+      <InvitationSection />
       {/* Invitation story and event content */}
       <AboutSection />
       <ProgramSection />

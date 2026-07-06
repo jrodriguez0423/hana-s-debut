@@ -1,26 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 
 export default function HeroSection() {
   const [showPortal, setShowPortal] = useState(true);
+  const [portalOpened, setPortalOpened] = useState(false);
+  const [openingPhotoAvailable, setOpeningPhotoAvailable] = useState(true);
   const [navOpen, setNavOpen] = useState(false);
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => setShowPortal(false), 2600);
-    return () => window.clearTimeout(timer);
-  }, []);
+  function openInvitation() {
+    if (portalOpened) return;
 
-  const details = useMemo(
-    () => [
-      { label: "Date", value: "September 5, 2026" },
-      { label: "Time", value: "5:00 PM - 11:00 PM" },
-      { label: "Venue", value: "DoubleTree by Hilton Newark" },
-      { label: "Dress Code", value: "Formal jewel tones and gold" },
-    ],
-    []
-  );
+    setPortalOpened(true);
+    window.setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      setShowPortal(false);
+    }, 2200);
+  }
 
   function closeNav() {
     setNavOpen(false);
@@ -28,21 +25,38 @@ export default function HeroSection() {
 
   return (
     <section className="hero-section" id="home">
+      <div className="hero-photo-bg" aria-hidden="true" />
       <div className="hero-overlay" />
       {/* Opening invitation reveal */}
-      <div className={`envelope-portal ${showPortal ? "" : "hidden"}`}>
+      <div className={`envelope-portal ${showPortal ? "" : "hidden"} ${portalOpened ? "opened" : ""}`}>
         <div className="portal-stars" />
-        <div className="envelope">
-          <div className="opening-butterfly" />
-          <div className="envelope-core">Hana&apos;s Invitation</div>
-        </div>
+        <button className="invitation-opener" type="button" onClick={openInvitation} aria-label="Open Hana Rodriguez's invitation">
+          <div className="portal-stage">
+            <div className="portal-photo-placeholder">
+              {openingPhotoAvailable ? (
+                <img src="/opening-photo.jpg" alt="Hana Rodriguez" onError={() => setOpeningPhotoAvailable(false)} />
+              ) : null}
+              <i className="bi bi-image" />
+              <span>Photo</span>
+            </div>
+            <div className="envelope">
+              <div className="opening-butterfly" />
+              <div className="envelope-seal" aria-hidden="true">H</div>
+            </div>
+          </div>
+          <div className="portal-event-copy">
+            <p>Hana Rodriguez Turns 18</p>
+            <strong>09.05.2026</strong>
+            <span>Click the envelope to open your invitation</span>
+          </div>
+        </button>
       </div>
 
       <div className="container hero-content">
         {/* Main navigation */}
         <nav className="navbar navbar-expand-lg invitation-nav px-0 py-3">
           <a className="navbar-brand" href="#home" onClick={closeNav}>
-            Hana
+            Hana's 18th
           </a>
           <button
             className="navbar-toggler custom-toggler"
@@ -86,28 +100,11 @@ export default function HeroSection() {
           <div className="moon-glow" />
           <div className="moon-phase phase-one" />
           <div className="moon-phase phase-two" />
+          <div className="hero-title-lockup">
+            <h1 className="hero-title">Hana Rodriguez</h1>
+            <p className="hero-subtitle">09.05.2026</p>
+          </div>
           <p className="hero-kicker">Hana&apos;s 18th Debut & Hazel Rodriguez&apos;s 50th Birthday</p>
-          <h1 className="hero-title">Hana Rodriguez</h1>
-          <p className="hero-subtitle">An Evening Written in the Stars</p>
-          <p className="hero-copy">
-            Please join us as we celebrate Hana&apos;s 18th Debut and Hazel Rodriguez&apos;s 50th Birthday.
-          </p>
-
-          <div className="d-flex justify-content-center gap-3 flex-wrap">
-            <a className="gold-btn" href="#rsvp">
-              <i className="bi bi-stars" /> RSVP Here
-            </a>
-          </div>
-
-          {/* Hero event summary */}
-          <div className="hero-meta mt-4">
-            {details.map((item) => (
-              <div key={item.label} className="glass-card gold-border">
-                <strong>{item.label}</strong>
-                <span>{item.value}</span>
-              </div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>

@@ -4,18 +4,24 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 
+const RSVP_ENDPOINT =
+  "https://script.google.com/a/macros/divinesoftwaresystems.com/s/AKfycby_GcUIb0J5G2bgagDmj_ownh5kX1196Gl9VmvjoyT8CGPrLMNbkI1isol3viC-Xcta/exec";
+
+const initialFormData = {
+  firstName: "",
+  lastName: "",
+  phone: "",
+  guests: "0",
+  guestNames: [],
+  attendance: "Yes",
+  diet: "",
+  message: "",
+};
+
 export default function RSVPSection() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    guests: "0",
-    guestNames: [],
-    attendance: "Yes",
-    diet: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -39,7 +45,7 @@ export default function RSVPSection() {
     }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const submission = {
       ...formData,
@@ -51,8 +57,27 @@ export default function RSVPSection() {
       })),
     };
 
-    console.log("RSVP submission", submission);
-    setStatus("Thank you for your reply. Your response has been received.");
+    setIsSubmitting(true);
+    setStatus("Sending your RSVP...");
+
+    try {
+      await fetch(RSVP_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(submission),
+      });
+
+      setFormData(initialFormData);
+      setStatus("Thank you for your reply. Your response has been received.");
+    } catch (error) {
+      console.error("RSVP submission failed", error);
+      setStatus("Something went wrong. Please try again or contact Patrick Rodriguez at 510-825-6825.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -204,8 +229,8 @@ export default function RSVPSection() {
                   </div>
                 </div>
                 <div className="d-flex flex-wrap justify-content-between align-items-center mt-4 gap-3">
-                  <button className="gold-btn" type="submit">
-                    <i className="bi bi-send-fill" /> Send RSVP
+                  <button className="gold-btn" type="submit" disabled={isSubmitting}>
+                    <i className="bi bi-send-fill" /> {isSubmitting ? "Sending..." : "Send RSVP"}
                   </button>
                   {status ? (
                     <span className="rsvp-status" role="status" aria-live="polite">
