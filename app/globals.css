@@ -304,11 +304,22 @@ textarea {
 }
 
 .invite-name {
-  margin: 0 0 2rem;
+  margin: 0 0 0.7rem;
   font-family: var(--font-great-vibes), cursive;
   font-size: clamp(3.3rem, 9vw, 5.4rem);
   color: var(--gold-soft);
   text-shadow: 0 0 8px rgba(247, 246, 243, 0.46), 0 0 28px rgba(215, 208, 216, 0.56);
+}
+
+.invite-golden {
+  margin: 0 auto 2.1rem;
+  color: rgba(247, 246, 243, 0.84);
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(0.9rem, 2vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.55;
+  text-transform: uppercase;
 }
 
 .invite-month {
@@ -418,7 +429,7 @@ textarea {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("/opening-photo.jpg");
+  background-image: url("/photo.png");
   background-position: center 38%;
   background-size: cover;
   opacity: 0.72;
@@ -1252,15 +1263,31 @@ textarea {
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34), 0 0 26px rgba(163, 145, 168, 0.12);
 }
 
+.gallery-card img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .gallery-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 34%, rgba(5, 7, 21, 0.72)),
     radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
     linear-gradient(135deg, transparent 38%, rgba(255, 255, 255, 0.1) 39%, transparent 41%);
-  background-size: 24px 24px, 100% 100%;
+  background-size: 100% 100%, 24px 24px, 100% 100%;
   opacity: 0.55;
+}
+
+.gallery-card.has-image::before {
+  opacity: 0.72;
 }
 
 .gallery-card::after {
@@ -1273,6 +1300,10 @@ textarea {
   font-size: 2.2rem;
   color: rgba(215, 208, 216, 0.8);
   transform: translate(-50%, -50%);
+}
+
+.gallery-card.has-image::after {
+  display: none;
 }
 
 .gallery-caption {
@@ -1555,6 +1586,15 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  .envelope-portal {
+    place-items: start center;
+    padding-top: clamp(0.75rem, 2.5svh, 1.4rem);
+    overflow: hidden;
+    background:
+      radial-gradient(circle at center, rgba(61, 44, 141, 0.34), transparent 22rem),
+      linear-gradient(140deg, #050715, #0b1026);
+  }
+
   .hero-section {
     padding-bottom: 2.5rem;
   }
@@ -1632,21 +1672,22 @@ textarea {
 
   .invitation-opener {
     width: min(94vw, 460px);
+    max-height: 96svh;
   }
 
   .portal-stage {
-    padding-bottom: 82px;
+    padding-bottom: 76px;
   }
 
   .portal-photo-placeholder {
-    height: min(62svh, 560px);
-    min-height: 430px;
+    height: min(55svh, 500px);
+    min-height: 340px;
     border-radius: 1.2rem 1.2rem 0.3rem 0.3rem;
   }
 
   .envelope {
-    width: min(78vw, 330px);
-    height: 180px;
+    width: min(76vw, 310px);
+    height: 160px;
   }
 
   .envelope-seal {
@@ -1656,14 +1697,23 @@ textarea {
   }
 
   .portal-event-copy p {
-    margin-top: 0.5rem;
-    font-size: 3.05rem;
+    margin-top: 0.4rem;
+    font-size: clamp(2.15rem, 11vw, 2.8rem);
+    line-height: 0.92;
+  }
+
+  .portal-event-copy strong {
+    margin-top: 0.4rem;
+    font-size: 0.86rem;
+    letter-spacing: 0.24em;
   }
 
   .portal-event-copy span {
-    margin-top: 1rem;
-    padding: 0.72rem 0.85rem;
-    font-size: 0.84rem;
+    width: min(82vw, 340px);
+    margin-top: 0.65rem;
+    padding: 0.62rem 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.25;
   }
 
   .section-shell {
@@ -1684,6 +1734,55 @@ textarea {
 }
 
 @media (max-width: 420px) {
+  .envelope-portal {
+    padding-top: max(0.65rem, env(safe-area-inset-top));
+  }
+
+  .invitation-opener {
+    width: 94vw;
+  }
+
+  .portal-stage {
+    padding-bottom: 64px;
+  }
+
+  .portal-photo-placeholder {
+    height: 50svh;
+    min-height: 320px;
+    border-radius: 1rem 1rem 0.25rem 0.25rem;
+  }
+
+  .portal-photo-placeholder::before {
+    inset: 8px;
+  }
+
+  .envelope {
+    width: min(76vw, 300px);
+    height: 148px;
+  }
+
+  .envelope-seal {
+    width: 54px;
+    height: 54px;
+    font-size: 2.2rem;
+  }
+
+  .portal-event-copy p {
+    font-size: clamp(1.8rem, 10vw, 2.25rem);
+  }
+
+  .portal-event-copy strong {
+    font-size: 0.76rem;
+    letter-spacing: 0.2em;
+  }
+
+  .portal-event-copy span {
+    width: min(82vw, 310px);
+    margin-top: 0.55rem;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
   .hero-title {
     font-size: 3.65rem;
   }
@@ -1694,6 +1793,75 @@ textarea {
 
   .section-heading .eyebrow {
     letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 420px) and (max-height: 880px) {
+  .envelope-portal {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+
+  .invitation-opener {
+    width: 94vw;
+  }
+
+  .portal-stage {
+    padding-bottom: 68px;
+  }
+
+  .portal-photo-placeholder {
+    height: 52svh;
+    min-height: 350px;
+  }
+
+  .envelope {
+    width: min(75vw, 300px);
+    height: 144px;
+  }
+
+  .envelope-seal {
+    width: 54px;
+    height: 54px;
+    font-size: 2.2rem;
+  }
+
+  .portal-event-copy p {
+    margin-top: 0.35rem;
+    font-size: clamp(1.75rem, 9.6vw, 2.16rem);
+    line-height: 0.9;
+  }
+
+  .portal-event-copy strong {
+    margin-top: 0.34rem;
+    font-size: 0.72rem;
+  }
+
+  .portal-event-copy span {
+    width: min(82vw, 320px);
+    margin-top: 0.5rem;
+    padding: 0.52rem 0.65rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 380px), (max-height: 760px) {
+  .portal-photo-placeholder {
+    height: 39svh;
+    min-height: 245px;
+  }
+
+  .portal-stage {
+    padding-bottom: 48px;
+  }
+
+  .envelope {
+    width: min(70vw, 250px);
+    height: 112px;
+  }
+
+  .portal-event-copy p {
+    font-size: clamp(1.45rem, 8.5vw, 1.8rem);
   }
 }
 

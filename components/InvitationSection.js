@@ -33,6 +33,7 @@ export default function InvitationSection() {
             Please join us to celebrate the magical debut of
           </p>
           <p className="invite-name">Hana</p>
+          <p className="invite-golden">and Hazel&apos;s Golden Celebration</p>
 
           <div className="invite-month">September</div>
           <div className="invite-calendar" aria-label="September 5, 2026">

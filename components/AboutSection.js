@@ -38,10 +38,10 @@ export default function AboutSection() {
             <div className="glass-card info-card gold-border quote-card text-center h-100 p-4 d-flex flex-column justify-content-center">
               <i className="bi bi-sparkles fs-2" />
               <h3 className="mt-3">
-                Celebrating Hazel, too.
+                Hazel&apos;s Golden Celebration
               </h3>
               <p className="lead-text mt-3 mb-0">
-                We are also honoring Hazel Rodriguez's 50th birthday, a milestone filled with gratitude, laughter, and the people who have been part of her story. It is a special night for both mother and daughter, and we are thankful to share it with you.
+                We are also honoring Hazel Rodriguez&apos;s 50th birthday, her golden celebration filled with gratitude, laughter, and the people who have been part of her story. It is a special night for both mother and daughter, and we are thankful to share it with you.
               </p>
             </div>
           </div>

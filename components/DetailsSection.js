@@ -12,9 +12,14 @@ const details = [
     lines: ["DoubleTree by Hilton Newark", "39900 Balentine Dr.", "Newark, CA 94560"],
   },
   { icon: "bi-brightness-high", title: "Dress Code", label: "Attire", text: "Formal evening attire in jewel tones and gold" },
-  { icon: "bi-cup-hot-fill", title: "Food", label: "Dinner", text: "Buffet" },
+  { icon: "bi-fork-knife", title: "Food", label: "Dinner", text: "Buffet" },
   { icon: "bi-car-front-fill", title: "Parking", label: "Arrival", text: "Hotel guest parking available onsite; follow venue signage on arrival" },
-  { icon: "bi-envelope-heart", title: "Contact", label: "Questions", text: "Contact Patrick Rodriguez at 510-825-6825" },
+  {
+    icon: "bi-envelope-heart",
+    title: "Contact",
+    label: "Questions",
+    lines: ["Contact Hazel at 510-209-5300", "or Patrick at 510-825-6825"],
+  },
 ];
 
 export default function DetailsSection() {

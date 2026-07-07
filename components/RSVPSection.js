@@ -74,7 +74,7 @@ export default function RSVPSection() {
       setStatus("Thank you for your reply. Your response has been received.");
     } catch (error) {
       console.error("RSVP submission failed", error);
-      setStatus("Something went wrong. Please try again or contact Patrick Rodriguez at 510-825-6825.");
+      setStatus("Something went wrong. Please try again or contact Hazel at 510-209-5300 or Patrick at 510-825-6825.");
     } finally {
       setIsSubmitting(false);
     }

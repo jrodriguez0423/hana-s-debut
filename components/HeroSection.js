@@ -34,7 +34,7 @@ export default function HeroSection() {
           <div className="portal-stage">
             <div className="portal-photo-placeholder">
               {openingPhotoAvailable ? (
-                <img src="/opening-photo.jpg" alt="Hana Rodriguez" onError={() => setOpeningPhotoAvailable(false)} />
+                <img src="/photo.png" alt="Hana Rodriguez" onError={() => setOpeningPhotoAvailable(false)} />
               ) : null}
               <i className="bi bi-image" />
               <span>Photo</span>
@@ -45,7 +45,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="portal-event-copy">
-            <p>Hana Rodriguez Turns 18</p>
+            <p>Hana Rodriguez Turns 18<br />& Hazel&apos;s Golden Birthday</p>
             <strong>09.05.2026</strong>
             <span>Click the envelope to open your invitation</span>
           </div>
@@ -55,9 +55,6 @@ export default function HeroSection() {
       <div className="container hero-content">
         {/* Main navigation */}
         <nav className="navbar navbar-expand-lg invitation-nav px-0 py-3">
-          <a className="navbar-brand" href="#home" onClick={closeNav}>
-            Hana's 18th
-          </a>
           <button
             className="navbar-toggler custom-toggler"
             type="button"
@@ -104,7 +101,7 @@ export default function HeroSection() {
             <h1 className="hero-title">Hana Rodriguez</h1>
             <p className="hero-subtitle">09.05.2026</p>
           </div>
-          <p className="hero-kicker">Hana&apos;s 18th Debut & Hazel Rodriguez&apos;s 50th Birthday</p>
+          <p className="hero-kicker">Hana&apos;s 18th Debut & Hazel&apos;s Golden Celebration</p>
         </motion.div>
       </div>
     </section>

@@ -1,16 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 
 const galleryItems = [
-  "Hilton Elegance",
-  "Golden Glow",
-  "Butterfly Dreams",
-  "Celestial Details",
-  "Soft Romance",
-  "A Night to Remember",
+  { caption: "Hana Portrait", src: "/gallery/hana-gallery-01.jpg" },
+  { caption: "Debut Details", src: "/gallery/hana-gallery-02.jpg" },
 ];
+
+function GalleryCard({ item }) {
+  const [imageAvailable, setImageAvailable] = useState(true);
+
+  return (
+    <div className={`gallery-card ${imageAvailable ? "has-image" : ""}`}>
+      {imageAvailable ? (
+        <img src={item.src} alt={item.caption} onError={() => setImageAvailable(false)} />
+      ) : null}
+    </div>
+  );
+}
 
 export default function GallerySection() {
   return (
@@ -29,10 +38,8 @@ export default function GallerySection() {
           className="row g-4"
         >
           {galleryItems.map((item) => (
-            <div key={item} className="col-sm-6 col-lg-4">
-              <div className="gallery-card">
-                <div className="gallery-caption">{item}</div>
-              </div>
+            <div key={item.src} className="col-md-6">
+              <GalleryCard item={item} />
             </div>
           ))}
         </motion.div>
