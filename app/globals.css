@@ -1806,17 +1806,17 @@ textarea {
   }
 
   .portal-stage {
-    padding-bottom: 78px;
+    padding-bottom: 82px;
   }
 
   .portal-photo-placeholder {
-    height: 61svh;
-    min-height: 470px;
+    height: 68svh;
+    min-height: 560px;
   }
 
   .envelope {
-    width: min(78vw, 320px);
-    height: 154px;
+    width: min(80vw, 330px);
+    height: 164px;
   }
 
   .envelope-seal {
@@ -1826,7 +1826,7 @@ textarea {
   }
 
   .portal-event-copy p {
-    margin-top: 0.3rem;
+    margin-top: 0.28rem;
     font-size: clamp(1.72rem, 9.4vw, 2.08rem);
     line-height: 0.9;
   }
