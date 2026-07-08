@@ -13,7 +13,6 @@ const events = [
   { time: "8:15 PM", title: "18 Benjamins", icon: "bi-currency-dollar" },
   { time: "8:30 PM", title: "Special Performances", icon: "bi-mic" },
   { time: "9:05 PM", title: "Dancing", icon: "bi-soundwave" },
-  { time: "10:00 PM", title: "Photo Session", icon: "bi-camera" },
   { time: "11:00 PM", title: "Closing", icon: "bi-moon-stars" },
 ];
 

@@ -15,6 +15,7 @@ const initialFormData = {
   guestNames: [],
   attendance: "Yes",
   diet: "",
+  hotelAccommodation: "I do not need hotel accommodations.",
   message: "",
 };
 
@@ -215,6 +216,36 @@ export default function RSVPSection() {
                       </div>
                     </fieldset>
                   ) : null}
+                  <fieldset className="col-12 accommodation-card glass-card">
+                    <legend>Hotel Accommodations</legend>
+                    <p className="accommodation-note">
+                      A block of guest rooms has been reserved at the event hotel for guests attending our celebration at a special group
+                      rate, subject to availability. If you are interested in reserving a room, please let us know your preferred stay.
+                    </p>
+                    <div className="row g-3">
+                      {[
+                        "September 4-6 (2 nights)",
+                        "September 5-6 (1 night)",
+                        "I do not need hotel accommodations.",
+                      ].map((option) => (
+                        <div className="col-md-4" key={option}>
+                          <label className="accommodation-option">
+                            <input
+                              type="radio"
+                              name="hotelAccommodation"
+                              value={option}
+                              checked={formData.hotelAccommodation === option}
+                              onChange={handleChange}
+                            />
+                            <span>{option}</span>
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="accommodation-note small mb-0 mt-3">
+                      Reservation link to follow. Once available, booking details will be shared with all interested guests.
+                    </p>
+                  </fieldset>
                   <div className="col-12 form-floating">
                     <textarea
                       className="form-control"

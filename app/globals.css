@@ -1404,6 +1404,54 @@ textarea {
   text-transform: uppercase;
 }
 
+.accommodation-card {
+  min-width: 0;
+  margin: 0;
+  padding: 1.15rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(215, 208, 216, 0.18);
+}
+
+.accommodation-card legend {
+  float: none;
+  width: auto;
+  margin-bottom: 0.45rem;
+  font-family: var(--font-playfair), serif;
+  font-size: 1.2rem;
+  color: var(--gold-soft);
+}
+
+.accommodation-note {
+  color: rgba(253, 252, 251, 0.72);
+  line-height: 1.7;
+}
+
+.accommodation-option {
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border-radius: 0.95rem;
+  color: rgba(253, 252, 251, 0.84);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(215, 208, 216, 0.16);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.accommodation-option:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 208, 216, 0.34);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.accommodation-option input {
+  flex: 0 0 auto;
+  margin-top: 0.25rem;
+  accent-color: var(--gold-soft);
+}
+
 .rsvp-status {
   color: var(--gold-soft);
 }
