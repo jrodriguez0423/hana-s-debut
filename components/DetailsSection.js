@@ -11,7 +11,13 @@ const details = [
     label: "Where",
     lines: ["DoubleTree by Hilton Newark", "39900 Balentine Dr.", "Newark, CA 94560"],
   },
-  { icon: "bi-brightness-high", title: "Dress Code", label: "Attire", text: "Formal evening attire in jewel tones and gold" },
+  {
+    icon: "bi-palette",
+    title: "Dress Code",
+    label: "Attire",
+    text: "Please join us in color-coordinated formal attire. We look forward to seeing you in your elegant outfits.",
+    swatches: ["#52305F", "#A391A8", "#C9C5CB", "#AEB4BE", "#263866"],
+  },
   { icon: "bi-fork-knife", title: "Food", label: "Dinner", text: "Buffet" },
   { icon: "bi-car-front-fill", title: "Parking", label: "Arrival", text: "Hotel guest parking available onsite; follow venue signage on arrival" },
   {
@@ -55,7 +61,16 @@ export default function DetailsSection() {
                     ))}
                   </p>
                 ) : (
-                  <p className="detail-text mb-0">{item.text}</p>
+                  <>
+                    <p className="detail-text mb-0">{item.text}</p>
+                    {item.swatches ? (
+                      <div className="attire-swatches" aria-label="Suggested attire colors">
+                        {item.swatches.map((color) => (
+                          <span key={color} style={{ "--swatch-color": color }} />
+                        ))}
+                      </div>
+                    ) : null}
+                  </>
                 )}
               </div>
             </div>

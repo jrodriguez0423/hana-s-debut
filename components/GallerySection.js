@@ -7,6 +7,8 @@ import SectionHeading from "./SectionHeading";
 const galleryItems = [
   { caption: "Hana Portrait", src: "/gallery/hana-gallery-01.jpg" },
   { caption: "Debut Details", src: "/gallery/hana-gallery-02.jpg" },
+  { caption: "Family Moment", src: "/gallery/IMG_3290.jpeg" },
+  { caption: "Golden Glow", src: "/gallery/IMG_4700.jpg" },
 ];
 
 function GalleryCard({ item }) {
