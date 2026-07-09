@@ -8,7 +8,7 @@ const events = [
   { time: "5:30 PM", title: "Welcome", icon: "bi-stars" },
   { time: "5:45 PM", title: "Procession", icon: "bi-person-hearts" },
   { time: "6:00 PM", title: "Prayer", icon: "bi-heart" },
-  { time: "6:30 PM", title: "Dinner", icon: "bi-fork-knife" },
+  { time: "6:30 PM", title: "Dinner - Buffet", icon: "bi-fork-knife" },
   { time: "7:00 PM", title: "Cotillion", icon: "bi-music-note-beamed" },
   { time: "7:30 PM", title: "18 Roses", icon: "bi-flower1" },
   { time: "7:50 PM", title: "18 Candles", icon: "bi-fire" },
