@@ -45,6 +45,13 @@ export default function DetailsSection() {
                   <h4 className="detail-title mb-0">{item.title}</h4>
                 </div>
                 <p className="lead-text mb-0">{item.text}</p>
+                {item.swatches ? (
+                  <div className="attire-swatches" aria-label="Suggested attire colors">
+                    {item.swatches.map((color) => (
+                      <span key={color} style={{ "--swatch-color": color }} />
+                    ))}
+                  </div>
+                ) : null}
               </div>
             </div>
           ))}
