@@ -219,8 +219,8 @@ export default function RSVPSection() {
                       </div>
                     </fieldset>
                   ) : null}
-                  <fieldset className="col-12 accommodation-card glass-card">
-                    <legend>Hotel Accommodations</legend>
+                  <div className="col-12 accommodation-card glass-card" role="group" aria-labelledby="hotel-accommodations-title">
+                    <h3 className="accommodation-title" id="hotel-accommodations-title">Hotel Accommodations</h3>
                     <p className="accommodation-note">
                       A block of guest rooms has been reserved at the event hotel for guests attending our celebration at a special group
                       rate, subject to availability. If you are interested in reserving a room, please let us know your preferred stay.
@@ -248,7 +248,7 @@ export default function RSVPSection() {
                     <p className="accommodation-note small mb-0 mt-3">
                       Reservation link to follow. Once available, booking details will be shared with all interested guests.
                     </p>
-                  </fieldset>
+                  </div>
                   <div className="col-12 form-floating">
                     <textarea
                       className="form-control"
