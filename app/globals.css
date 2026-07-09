@@ -1407,17 +1407,18 @@ textarea {
 .accommodation-card {
   min-width: 0;
   margin: 0;
-  padding: 1.15rem;
+  padding: 1.25rem;
   border-radius: 1.1rem;
   border: 1px solid rgba(215, 208, 216, 0.18);
 }
 
 .accommodation-card legend {
   float: none;
-  width: auto;
-  margin-bottom: 0.45rem;
+  width: 100%;
+  margin: 0 0 0.65rem;
   font-family: var(--font-playfair), serif;
   font-size: 1.2rem;
+  line-height: 1.25;
   color: var(--gold-soft);
 }
 
@@ -1785,6 +1786,31 @@ textarea {
     line-height: 1.25;
   }
 
+  .accommodation-card {
+    padding: 1rem;
+  }
+
+  .accommodation-card legend {
+    font-size: 1.08rem;
+  }
+
+  .accommodation-note {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .accommodation-option {
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.72rem 0.8rem;
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+
+  .accommodation-option input {
+    margin-top: 0;
+  }
+
   .section-shell {
     padding: 5rem 0;
   }
@@ -1851,6 +1877,18 @@ textarea {
     margin-top: 0.55rem;
     padding: 0.55rem 0.65rem;
     font-size: 0.72rem;
+  }
+
+  .accommodation-card {
+    padding: 0.9rem;
+  }
+
+  .accommodation-note {
+    font-size: 0.86rem;
+  }
+
+  .accommodation-option {
+    font-size: 0.86rem;
   }
 
   .hero-title {
