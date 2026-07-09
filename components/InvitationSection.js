@@ -23,11 +23,6 @@ export default function InvitationSection() {
           transition={{ duration: 0.75 }}
           className="invitation-card"
         >
-          <div className="invite-corner invite-corner-top-left" />
-          <div className="invite-corner invite-corner-top-right" />
-          <div className="invite-corner invite-corner-bottom-left" />
-          <div className="invite-corner invite-corner-bottom-right" />
-
           <p className="invite-script" id="invitation-heading">You are Invited!</p>
           <p className="invite-copy">
             Please join us to celebrate the magical debut of
