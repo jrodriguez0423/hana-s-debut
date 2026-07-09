@@ -1370,6 +1370,23 @@ textarea {
   background: var(--white);
 }
 
+.rsvp-deadline {
+  margin: 0 0 1.35rem;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  color: rgba(253, 252, 251, 0.9);
+  font-family: var(--font-playfair), serif;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(215, 208, 216, 0.22);
+  box-shadow: 0 0 20px rgba(163, 145, 168, 0.12);
+}
+
+.rsvp-deadline strong {
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
 .guest-name-list {
   min-width: 0;
   border: 0;

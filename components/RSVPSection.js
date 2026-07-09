@@ -98,6 +98,9 @@ export default function RSVPSection() {
         >
           <div className="col-lg-8">
             <div className="glass-card info-card gold-border p-4 p-lg-5">
+              <p className="rsvp-deadline">
+                RSVP by <strong>Friday, August 7, 2026</strong>
+              </p>
               <form onSubmit={handleSubmit}>
                 <div className="row g-4">
                   <div className="col-md-6 form-floating">
