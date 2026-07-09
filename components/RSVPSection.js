@@ -5,7 +5,7 @@ import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 
 const RSVP_ENDPOINT =
-  "https://script.google.com/a/macros/divinesoftwaresystems.com/s/AKfycby_GcUIb0J5G2bgagDmj_ownh5kX1196Gl9VmvjoyT8CGPrLMNbkI1isol3viC-Xcta/exec";
+  "https://script.google.com/macros/s/AKfycbzvO_0mCpd1ZVuyehDzEWitbqRCkF6dFL-a45M9kXApgWZEGhPJHWqsB90dohNF7Z7z/exec";
 
 const initialFormData = {
   firstName: "",
