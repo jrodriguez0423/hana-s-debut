@@ -34,7 +34,7 @@ export default function HeroSection() {
           <div className="portal-stage">
             <div className="portal-photo-placeholder">
               {openingPhotoAvailable ? (
-                <img src="/gallery/IMG_4700.jpg" alt="Hana Rodriguez" onError={() => setOpeningPhotoAvailable(false)} />
+                <img src="/gallery/IMG_2164.jpeg" alt="Hana Rodriguez" onError={() => setOpeningPhotoAvailable(false)} />
               ) : null}
               <i className="bi bi-image" />
               <span>Photo</span>
