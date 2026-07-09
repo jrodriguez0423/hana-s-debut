@@ -22,8 +22,8 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "Hana Rodriguez | 18th Debut Invitation",
-  description: "A celestial, enchanted invitation for Hana Rodriguez's 18th Debut.",
+  title: "Hana's 18th & Hazel's Golden Night",
+  description: "A celestial, enchanted invitation for Hana's 18th and Hazel's Golden Night.",
 };
 
 export default function RootLayout({ children }) {

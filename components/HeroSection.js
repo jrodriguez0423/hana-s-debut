@@ -45,7 +45,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="portal-event-copy">
-            <p>Hana Rodriguez Turns 18<br />& Hazel&apos;s Golden Birthday</p>
+            <p>Hana&apos;s 18th<br />& Hazel&apos;s Golden Night</p>
             <strong>09.05.2026</strong>
             <span>Click the envelope to open your invitation</span>
           </div>
@@ -101,7 +101,7 @@ export default function HeroSection() {
             <h1 className="hero-title">Hana Rodriguez</h1>
             <p className="hero-subtitle">09.05.2026</p>
           </div>
-          <p className="hero-kicker">Hana&apos;s 18th Debut & Hazel&apos;s Golden Celebration</p>
+          <p className="hero-kicker">Hana&apos;s 18th & Hazel&apos;s Golden Night</p>
         </motion.div>
       </div>
     </section>
